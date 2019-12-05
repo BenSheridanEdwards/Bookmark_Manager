@@ -5,6 +5,8 @@ class BookmarkManager < Sinatra::Base
 
 
   get '/' do
+    'Bookmarks Manager'
+    erb (:bookmarks)
     redirect 'bookmarks'
   end
 
