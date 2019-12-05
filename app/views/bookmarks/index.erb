@@ -1,7 +1,26 @@
 <h1>Bookmark Manager</h1>
 
-<ul>
+<table>
+  <thead>
+    <th style="border: 1px solid black;">
+      <td>Bookmarks</td>
+    </th>
+  </thead>
+  <tbody>
   <% @bookmarks.each do |bookmark| %>
-    <li><a href = "<%=bookmark.url%>"> <%= bookmark.title %> </a></li>
+    <tr>
+      <td>
+        <a href = "<%=bookmark.url%>"> <%= bookmark.title %> </a>
+        <form action="/delete" method="post">
+          <input 
+            type="submit" 
+            id="<%= bookmark.title.gsub(' ', '-') %>" 
+            name="<%= bookmark.title %>" 
+            value="DELETE"
+          >
+        </form>
+      </td>
+    <tr>
   <% end %>
-</ul>
+  </tbody>
+</table>

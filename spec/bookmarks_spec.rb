@@ -1,18 +1,18 @@
 require 'bookmark.rb'
 
-describe 'Bookmarks' do
+describe Bookmark do
 
-  let(:bookmarks) {Bookmark.new}
+  let(:bookmarks) { Bookmark.new }
+
+  before(:each) do
+    Bookmark.create('Makers Academy', 'http://www.makersacademy.com')
+    Bookmark.create('Google', 'http://www.google.com')
+    Bookmark.create('Destroy All Software', 'http://www.destroyallsoftware.com')
+    Bookmark.create('Ask Jeeves', 'http://www.askjeeves.com')
+  end
 
   describe '#all' do 
     it "displays all the users bookmarks" do
-      connection = PG.connect(dbname: 'bookmark_manager_test')
-      
-      connection.exec("INSERT INTO bookmarks (title, url) VALUES ('Makers Academy', 'http://www.makersacademy.com');")
-      connection.exec("INSERT INTO bookmarks (title, url) VALUES('Google', 'http://www.google.com');")
-      connection.exec("INSERT INTO bookmarks (title, url) VALUES('Destroy All Software', 'http://www.destroyallsoftware.com');")
-      connection.exec("INSERT INTO bookmarks (title, url) VALUES ('Ask Jeeves', 'http://www.askjeeves.com');")
-
       bookmarks = Bookmark.all.map { |bookmark| bookmark.url }
 
       expect(bookmarks).to include "http://www.makersacademy.com"
@@ -32,4 +32,13 @@ describe 'Bookmarks' do
     end
   end
 
+  describe '.delete' do
+    it 'deletes a selected bookmark' do
+      Bookmark.delete('Ask Jeeves')
+
+      bookmarks = Bookmark.all.map { |bookmark| bookmark.title }
+
+      expect(bookmarks).not_to include 'Ask Jeeves'
+    end
+  end
 end

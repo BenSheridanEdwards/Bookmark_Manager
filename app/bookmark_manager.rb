@@ -3,9 +3,7 @@ require './lib/bookmark.rb'
 
 class BookmarkManager < Sinatra::Base
 
-
   get '/' do
-    "Bookmark Manager"
     redirect 'bookmarks/index'
   end
 
@@ -24,6 +22,11 @@ class BookmarkManager < Sinatra::Base
 
   post '/bookmarks' do
     Bookmark.create(params['title'], params['url'])
+    redirect '/bookmarks'
+  end
+
+  post '/delete' do
+    Bookmark.delete(params.keys.pop)
     redirect '/bookmarks'
   end
 
