@@ -26,16 +26,24 @@
         null,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/bensheridanedwards/Documents/2019/Makers/Main-Course/Week-4/Bookmark_Manager/spec/features/creating_bookmarks_spec.rb": [
         1,
         1,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
-        0,
+        1,
         null,
         null
       ],
@@ -69,6 +77,6 @@
         null
       ]
     },
-    "timestamp": 1575543120
+    "timestamp": 1575544233
   }
 }

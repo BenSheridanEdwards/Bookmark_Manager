@@ -22,4 +22,12 @@ describe 'Bookmarks' do
     end
   end
 
+  describe '.create' do
+    it 'creates a new bookmark' do
+      Bookmarks.create(url: 'http://www.testbookmark.com')
+  
+      expect(Bookmarks.all).to include 'http://www.testbookmark.com'
+    end
+  end
+
 end
