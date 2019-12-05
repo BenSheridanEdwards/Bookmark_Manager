@@ -98,4 +98,4 @@ I would like to add the site's address and title to bookmark manager
 
 ## <a name="Domain_Model">Domain Model</a>
 
-![Model](https://github.com/BenSheridanEdwards/Bookmark_Manager/blob/master/Screenshot%202019-12-05%20at%2009.55.02.png)
+![Model](https://raw.githubusercontent.com/BenSheridanEdwards/Bookmark_Manager/master/Domain%20Model.png)
