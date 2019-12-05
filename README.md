@@ -68,6 +68,7 @@ When you're ready to start interacting with your database, you can use PostgreSQ
 ```
 $ psql postgres
 ```
+Typing psql postgres instead of psql DATABASE_NAME will give us the access to create our first database
 
 ```
 postgres=# CREATE DATABASE "your_user_name_here"; 
