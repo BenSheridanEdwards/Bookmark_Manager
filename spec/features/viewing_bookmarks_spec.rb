@@ -12,16 +12,16 @@ feature 'Viewing bookmarks' do
   scenario 'A user can see bookmarks' do
     connection = PG.connect(dbname: 'bookmark_manager_test')
 
-    Bookmark.create(url: "http://www.makersacademy.com")
-    Bookmark.create(url: "http://www.google.com")
-    Bookmark.create(url: "http://www.destroyallsoftware.com")
-    Bookmark.create(url: "http://www.askjeeves.com")
+    Bookmark.create("Makers Academy", "http://www.makersacademy.com")
+    Bookmark.create("Google", "http://www.google.com")
+    Bookmark.create("Destroy All Software", "http://www.destroyallsoftware.com")
+    Bookmark.create("Ask Jeeves", "http://www.askjeeves.com")
 
     visit('/bookmarks/index')
 
-    expect(page).to have_content "http://www.makersacademy.com"
-    expect(page).to have_content "http://www.google.com"
-    expect(page).to have_content "http://www.destroyallsoftware.com"
-    expect(page).to have_content "http://www.askjeeves.com"
+    expect(page).to have_content "Makers Academy"
+    expect(page).to have_content "Google"
+    expect(page).to have_content "Destroy All Software"
+    expect(page).to have_content "Ask Jeeves"
   end
 end
