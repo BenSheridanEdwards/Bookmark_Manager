@@ -17,6 +17,8 @@ We're going to build a bookmark manager. A bookmark manager is a website to main
 
 ## <a name="Installation">Installation Instructions</a>
 
+#### Getting started
+
 ##### Clone the repository from github then change directory into it. Run bundle then rackup to initialise the server:
 
 ```
@@ -45,8 +47,6 @@ rubocop
 
 #### Installing PostgreSQL & Installing your own database.
 
--
-
 ##### I'd reccomend using the package manager Homebrew to start the install of PostgreSQL:
 
 ```
@@ -63,14 +63,26 @@ brew services start postgresql
 
 When you're ready to start interacting with your database, you can use PostgreSQl's built-in interface (psql), a command-line tool to start using SQL, PostgreSQL's lanaguage. 
 
-##### To get started, type psql followed by the database name. I'm quickly going to show you how to create your database below:
+##### To get started with your first database, i'm quickly going to show you how to create your database in the steps below:
 
 ```
 $ psql postgres
-postgres=# CREATE DATABASE "your_user_name_here"; # This will usually be the same name as your computer
-yourusername=# CREATE DATABASE bookmark_manager; # This will create your bookmark manager database
-yourusername=# \c bookmark_manager; # This will connect you to your newly created database
 ```
+
+```
+postgres=# CREATE DATABASE "your_user_name_here"; 
+```
+This will usually be the same name as your computer
+
+```
+yourusername=# CREATE DATABASE bookmark_manager;
+```
+This will create your bookmark manager database
+
+```
+yourusername=# \c bookmark_manager;
+```
+This will connect you to your newly created database
 
 ##### To setup the table structure for your bookmark manager, run psql after you've connected to your new database. Then run the SQL scripts in the db/migrations folder in the given order:
 
