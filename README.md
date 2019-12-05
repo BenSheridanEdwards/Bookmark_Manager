@@ -90,14 +90,25 @@ This will connect you to your newly created database
 ```
 psql
 ```
+or you can create a new bookmarks table with:
 
-#### You can now inspect your new table with:
+```
+CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+```
+
+#### You can now inspect your new table:
 
 ```
 bookmark_manager=# \dt
 ```
 
-You'll find all the common commands you'll need to connect to your database, create tables, select, add, update, delete, and list your tables, [here](http://www.postgresqltutorial.com/postgresql-cheat-sheet/).
+#### To query all the data from your bookmarks table at any time:
+
+```
+SELECT * FROM bookmarks;
+```
+
+You'll find all the commands to create databases and tables, as well as select, add, update, delete your tables, [here](http://www.postgresqltutorial.com/postgresql-cheat-sheet/).
 
 ## <a name="Story">User Stories</a>
 
