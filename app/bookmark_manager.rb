@@ -41,7 +41,7 @@ class BookmarkManager < Sinatra::Base
   post '/update' do
     session[:target_to_edit] = params.keys.pop
     @title = session[:target_to_edit]
-
+    @bookmark = Bookmark.all.select {|bookmark| bookmark.title == session[:target_to_edit]}.pop
 
 
 
