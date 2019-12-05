@@ -4,7 +4,7 @@ feature 'Viewing bookmarks' do
 
   feature 'Bookmark Manager Header' do 
     scenario "when a user visits the home page, the page title should be visable" do
-      visit('/')
+      visit('/bookmarks/index')
       expect(page).to have_content "Bookmark Manager"
     end
   end
@@ -17,7 +17,7 @@ feature 'Viewing bookmarks' do
     connection.exec("INSERT INTO bookmarks VALUES(3, 'http://www.destroyallsoftware.com');")
     connection.exec("INSERT INTO bookmarks VALUES(4, 'http://www.askjeeves.com');")
     
-    visit('/bookmarks')
+    visit('/bookmarks/index')
 
     expect(page).to have_content "http://www.makersacademy.com"
     expect(page).to have_content "http://www.google.com"
