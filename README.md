@@ -36,13 +36,13 @@ To view your bookmarks, navigate to: localhost:4567/bookmarks after you've ran r
 
 #### To run tests:
 ```
-rspec
+$ rspec
 ```
 
 #### To run linting: 
 
 ```
-rubocop
+$ rubocop
 ```
 
 ### Installing PostgreSQL & Installing your own database.
@@ -58,7 +58,7 @@ Alternatively, you can download the PostgreSQL app, [here](https://postgresapp.c
 #### When you have PostgreSQL installed, you can start it and keep it running in the background with the command: 
 
 ```
-brew services start postgresql
+$ brew services start postgresql
 ```
 
 When you're ready to start interacting with your database, you can use PostgreSQl's built-in interface (psql), a command-line tool to start using SQL, PostgreSQL's lanaguage. 
@@ -88,7 +88,7 @@ This will connect you to your newly created database
 #### To setup the table structure for your bookmark manager, run psql after you've connected to your new database. Then run the SQL scripts in the db/migrations folder in the given order:
 
 ```
-psql
+bookmark_manager=# psql
 ```
 
 #### You can now inspect your new table with:
