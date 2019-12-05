@@ -17,9 +17,9 @@ We're going to build a bookmark manager. A bookmark manager is a website to main
 
 ## <a name="Installation">Installation Instructions</a>
 
-#### Getting started
+### Getting started
 
-##### Clone the repository from github then change directory into it. Run bundle then rackup to initialise the server:
+#### Clone the repository from github then change directory into it. Run bundle then rackup to initialise the server:
 
 ```
 $ git clone git@github.com:BenSheridanEdwards/Bookmark_Manager.git
@@ -27,27 +27,27 @@ $ cd Bookmark_Manager
 $ bundle
 ```
 
-##### To run your Bookmark Manager app once you've completed the steps below, use: 
+#### To run your Bookmark Manager app once you've completed the steps below, use: 
 ```
 $ rackup -p 4567
 ```
 
 To view your bookmarks, navigate to: [localhost:4567/bookmarks](localhost:4567/bookmarks)
 
-##### To run tests:
+#### To run tests:
 ```
 rspec
 ```
 
-##### To run linting: 
+#### To run linting: 
 
 ```
 rubocop
 ```
 
-#### Installing PostgreSQL & Installing your own database.
+### Installing PostgreSQL & Installing your own database.
 
-##### I'd reccomend using the package manager Homebrew to start the install of PostgreSQL:
+#### I'd reccomend using the package manager Homebrew to start the install of PostgreSQL:
 
 ```
 $ brew install postgresql
@@ -55,7 +55,7 @@ $ brew install postgresql
 
 Alternatively, you can download the PostgreSQL app, [here](https://postgresapp.com/).
 
-##### When you have PostgreSQL installed, you can start it and keep it running in the background with the command: 
+#### When you have PostgreSQL installed, you can start it and keep it running in the background with the command: 
 
 ```
 brew services start postgresql
@@ -63,7 +63,7 @@ brew services start postgresql
 
 When you're ready to start interacting with your database, you can use PostgreSQl's built-in interface (psql), a command-line tool to start using SQL, PostgreSQL's lanaguage. 
 
-##### To get started with your first database, i'm quickly going to show you how to create your database in the steps below:
+#### To get started with your first database, i'm quickly going to show you how to create your database in the steps below:
 
 ```
 $ psql postgres
@@ -85,13 +85,13 @@ yourusername=# \c bookmark_manager;
 ```
 This will connect you to your newly created database
 
-##### To setup the table structure for your bookmark manager, run psql after you've connected to your new database. Then run the SQL scripts in the db/migrations folder in the given order:
+#### To setup the table structure for your bookmark manager, run psql after you've connected to your new database. Then run the SQL scripts in the db/migrations folder in the given order:
 
 ```
 psql
 ```
 
-##### You can now inspect your new table with:
+#### You can now inspect your new table with:
 
 ```
 bookmark_manager=# \dt
