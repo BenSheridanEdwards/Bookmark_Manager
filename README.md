@@ -94,6 +94,10 @@ I would like to view all my bookmarks,
 As a time-pressed user
 So that I can save a website
 I would like to add the site's address and title to bookmark manager
+
+As a user
+So I can store bookmark data for later retrieval
+I want to add a bookmark to Bookmark Manager
 ```
 
 ## <a name="Domain_Model">Domain Model</a>
