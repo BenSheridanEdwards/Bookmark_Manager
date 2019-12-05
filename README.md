@@ -23,8 +23,19 @@ Clone the repository from github then change directory into it. Run bundle then 
 $ git clone git@github.com:BenSheridanEdwards/Bookmark_Manager.git
 $ cd Bookmark_Manager
 $ bundle
-$ rackup
+$ rackup -p 4567
 ```
+To run tests:
+```
+rspec
+```
+
+To run linting: 
+
+```
+rubocop
+```
+
 
 ## <a name="Story">User Stories</a>
 
