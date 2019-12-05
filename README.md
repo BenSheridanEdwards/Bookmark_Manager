@@ -32,7 +32,7 @@ $ bundle
 $ rackup -p 4567
 ```
 
-To view your bookmarks, navigate to: [localhost:4567/bookmarks](localhost:4567/bookmarks)
+To view your bookmarks, navigate to: localhost:4567/bookmarks after you've ran rackup
 
 #### To run tests:
 ```
