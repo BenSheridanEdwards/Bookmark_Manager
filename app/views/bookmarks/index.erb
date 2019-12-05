@@ -18,6 +18,14 @@
             name="<%= bookmark.title %>" 
             value="DELETE"
           >
+          </form>
+          <form action="/update" method="post">
+          <input 
+            type="submit" 
+            id="Update-<%= bookmark.title.gsub(' ', '-') %>" 
+            name="<%= bookmark.title %>" 
+            value="UPDATE"
+          >
         </form>
       </td>
     <tr>

@@ -5,7 +5,7 @@ describe Bookmark do
   let(:bookmarks) { Bookmark.new }
 
   before(:each) do
-    Bookmark.create('Makers Academy', 'http://www.makersacademy.com')
+    Bookmark.create('Makers Academy', 'http://www.makersacadem.com')
     Bookmark.create('Google', 'http://www.google.com')
     Bookmark.create('Destroy All Software', 'http://www.destroyallsoftware.com')
     Bookmark.create('Ask Jeeves', 'http://www.askjeeves.com')
@@ -15,7 +15,7 @@ describe Bookmark do
     it "displays all the users bookmarks" do
       bookmarks = Bookmark.all.map { |bookmark| bookmark.url }
 
-      expect(bookmarks).to include "http://www.makersacademy.com"
+      expect(bookmarks).to include "http://www.makersacadem.com"
       expect(bookmarks).to include "http://www.google.com"
       expect(bookmarks).to include "http://www.destroyallsoftware.com"
       expect(bookmarks).to include "http://www.askjeeves.com"
@@ -39,6 +39,14 @@ describe Bookmark do
       bookmarks = Bookmark.all.map { |bookmark| bookmark.title }
 
       expect(bookmarks).not_to include 'Ask Jeeves'
+    end
+  end
+
+  describe '.update' do 
+    it 'updates a selected bookmark' do
+      Bookmark.update("Makers Academy", "", "http://www.makersacademy.com")
+      bookmarks = Bookmark.all.map { |bookmark| bookmark.url }
+      expect(bookmarks).to include "http://www.makersacademy.com"
     end
   end
 end
