@@ -68,7 +68,6 @@ $ psql postgres
 postgres=# CREATE DATABASE "your_user_name_here"; # This will usually be the same name as your computer
 yourusername=# CREATE DATABASE bookmark_manager; # This will create your bookmark manager database
 yourusername=# \c bookmark_manager; # This will connect you to your newly created database
-
 ```
 
 To setup the table structure for your bookmark manager, run psql after you've connected to your new database. Then run the SQL scripts in the db/migrations folder in the given order:
