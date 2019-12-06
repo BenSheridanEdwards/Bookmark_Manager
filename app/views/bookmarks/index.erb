@@ -1,34 +1,30 @@
 <h1>Bookmark Manager</h1>
 
+<h2>Bookmarks</h2>
+
 <table>
   <thead>
-    <th style="border: 1px solid black;">
-      <td>Bookmarks</td>
-    </th>
+  <form action="/bookmarks/new" method="get" class="button_to">
+  <input type="submit" value="NEW">
+  </form>
+
+  <br>
+  <br>
+
+
   </thead>
   <tbody>
   <% @bookmarks.each do |bookmark| %>
     <tr>
       <td>
         <a href = "<%=bookmark.url%>"> <%= bookmark.title %> </a>
+        <form action="/update" method="post">
+          <input type="submit" id="Update-<%= bookmark.title.gsub(' ', '-') %>" name="<%= bookmark.title %>" value="UPDATE">
+        </form>
         <form action="/delete" method="post">
-          <input 
-            type="submit" 
-            id="<%= bookmark.title.gsub(' ', '-') %>" 
-            name="<%= bookmark.title %>" 
-            value="DELETE"
-          >
-          </form>
-          <form action="/update" method="post">
-          <input 
-            type="submit" 
-            id="Update-<%= bookmark.title.gsub(' ', '-') %>" 
-            name="<%= bookmark.title %>" 
-            value="UPDATE"
-          >
+          <input type="submit" id="<%= bookmark.title.gsub(' ', '-') %>" name="<%= bookmark.title %>" value="DELETE">
         </form>
       </td>
-    <tr>
   <% end %>
   </tbody>
 </table>
