@@ -22,11 +22,9 @@ class Bookmark
   end
 
   def self.update(target, new_title, new_url)
-   target_to_edit = self.all.select { |bookmark| bookmark.title == target }.pop 
-   target_to_edit.update_title(new_title)
-   target_to_edit.update_url(new_url)
-
-   
+    target_to_edit = self.all.select { |bookmark| bookmark.title == target }.pop 
+    target_to_edit.update_title(new_title)
+    target_to_edit.update_url(new_url)
   end
 
   def self.dbname
@@ -42,5 +40,4 @@ class Bookmark
   def update_url(new_url)
     CONNECTION.exec("UPDATE bookmarks SET url = '#{new_url}' WHERE url = '#{@url}'")
   end
-
 end
