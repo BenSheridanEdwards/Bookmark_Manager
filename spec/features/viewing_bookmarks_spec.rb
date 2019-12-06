@@ -4,7 +4,7 @@ feature 'Viewing bookmarks' do
 
   feature 'Bookmark Manager Header' do 
     scenario 'when a user visits the home page, the page title should be visable' do
-      visit('/bookmarks/index')
+      visit('/')
       expect(page).to have_content 'Bookmark Manager'
     end
   end
@@ -17,7 +17,7 @@ feature 'Viewing bookmarks' do
     Bookmark.create('Destroy All Software', 'http://www.destroyallsoftware.com')
     Bookmark.create('Ask Jeeves', 'http://www.askjeeves.com')
 
-    visit('/bookmarks/index')
+    visit('/')
 
     expect(page).to have_content 'Makers Academy'
     expect(page).to have_content 'Google'
