@@ -1,9 +1,11 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require './lib/bookmark.rb'
+require './database_connection_setup'
 
 class BookmarkManager < Sinatra::Base
-
   enable :sessions
+  register Sinatra::Flash
 
   get '/' do
     @bookmarks = Bookmark.all
@@ -15,6 +17,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/' do
+    flash[:notice] = "You must submit a valid URL."
     Bookmark.create(params['title'], params['url'])
     redirect '/'
   end
